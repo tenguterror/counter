@@ -14,7 +14,7 @@ export const Counter = () => {
   };
 
   // This will disable the minus button if at zero to not allow count to go below zero. Either true or false
-  const onCountZero = count === 0;
+  const onCountZero = count <= 0;
 
   // This will reset the count if the reset button is clicked
   const resetCount = () => {
