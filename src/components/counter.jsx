@@ -7,12 +7,11 @@ export const Counter = () => {
   };
 
   const decrement = () => {
-    if (count === 0) {
-      alert(`Can't go lower than 0!`);
-    } else {
       setCount((prevCount) => prevCount - 1);
-    }
+    
   };
+
+  const onCountZero = count === 0;
 
   const resetCount = () => {
     setCount(0);
@@ -22,7 +21,7 @@ export const Counter = () => {
     <div>
       <h1>Count: {count}</h1>
       <button onClick={increment}>+</button>
-      <button onClick={decrement}>-</button>
+      <button onClick={decrement} disabled={onCountZero} >-</button>
       <button onClick={resetCount}>Reset</button>
     </div>
   );
