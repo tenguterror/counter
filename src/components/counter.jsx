@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export const Counter = () => {
   const [count, setCount] = useState(0);
@@ -20,6 +20,10 @@ export const Counter = () => {
   const resetCount = () => {
     setCount(0);
   };
+
+  useEffect(() => {
+    document.title = `The current count is: ${count}`;
+  }, [count]);
 
   return (
     <div>
